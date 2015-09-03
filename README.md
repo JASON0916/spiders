@@ -6,3 +6,6 @@ spiders
   
 2.weibo_login:
   mainly about how to login on weibo.com
+
+3.hxen:
+  used to download BBC, CNN, Voa mp3 from http://www.hxen.com/
