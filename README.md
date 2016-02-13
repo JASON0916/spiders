@@ -9,3 +9,6 @@ spiders
 
 3.hxen:
   used to download BBC, CNN, Voa mp3 from http://www.hxen.com/
+
+4.HongKongStock spider:
+  A Freelancer project, collect information from http://tsci.com.cn , and then store the data in vps' MySQL database.
