@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>ebela spider</title>
+    <link href="/static/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/bootstrap/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="/static/css/base.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">定时任务管理界面</a>
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container">
+      <div class = "row">
+      <!-- 查询框 -->
+        <div class = "col-md-12">
+          <div class="query-group form-group">
+            <label id="config">现有配置</label>
+            <button type="button" class="btn btn-default" id="get_config">获取配置</button>
+          </div>
+        </div>
+
+        <div class = "col-md-12">
+          <label>删除location:</label>
+          <input type="text" id="del_location"  name="del_location">
+          <label>删除section:</label>
+          <input type="text" id="del_section" name="del_section">
+          <label>删除section_id:</label>
+          <input type="text" id="del_section_id" name="del_section_id">
+            <button type="button" class="btn btn-default" id="del_config">删除配置</button>
+        </div>
+
+        <div class = "col-md-12">
+          <label for="section_url">商品分区链接:</label>
+            <input type="text" id="section_url"  name="section_url">
+              <button type="button" class="btn btn-default" id="config_spider">添加配置</button>
+        </div>
+
+        <div class = "col-md-12">
+          <form class="form-inline">
+            <div class="query-group form-group">
+              <label for="sdate">ebay爬虫:</label>
+            </div>
+
+            <div class = "query-group form-group">
+              <button type="button" class="btn btn-default" id="run_spider">执行</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap/bootstrap-datepicker.min.js"></script>
+    <script src="/static/js/bootstrap/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script src="/static/js/runSpider.js"></script>
+  </body>
+</html>

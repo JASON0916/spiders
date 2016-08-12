@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>ebela info</title>
+    <link href="/static/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/bootstrap/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="/static/css/base.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">ebay 数据</a>
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container">
+      <div class = "row">
+      <!-- 查询框 -->
+        <div class = "col-md-12">
+          <form class="form-inline">
+            <div class="query-group form-group">
+              <label for="sdate">时间:</label>
+              <input type="text" class="form-date" id="start-date" name="sdate" > -
+              <input type="text" class="form-date" id="end-date"  name="edate" >
+              <label for="product_name">商品名(可为空):</label>
+              <input type="text" class="form-date" id="name"  name="product_name">
+              <label for="seller_name">卖家(可为空):</label>
+              <input type="text" class="form-date" id="seller"  name="seller_name">
+              <label for="section">分类(可为空):</label>
+              <input type="text" class="form-date" id="section"  name="section">
+            </div>
+
+            <div class = "query-group form-group">
+              <button type="button" class="btn btn-default" id="search">查询</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class = "col-md-12 query-group">
+      <!-- 表格 -->
+        <table class="table table-bordered table-striped table-hover table-condensed">
+          <thead class="thead-inverse">
+            <tr class="info">
+                <th>分类</th>
+              <th>商品名</th>
+              <th>图片</th>
+              <th>创建日期</th>
+              <th>原价单位</th>
+              <th>原价</th>
+              <th>卖家</th>
+              <th>卖价单位</th>
+              <th>卖价</th>
+            </tr>
+          </thead>
+          <tbody id="product_info_table">
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap/bootstrap-datepicker.min.js"></script>
+    <script src="/static/js/bootstrap/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script>
+        function getFormatedDate(deltaDays) {
+            if (deltaDays == null) deltaDays = 0;
+
+            var date = new Date();
+            date.setDate(date.getDate() + deltaDays)
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            return year + "-" + month + "-" + day;
+        }
+
+        jQuery(document).ready(function($) {
+            $("#start-date").datepicker("setDate", getFormatedDate(-1));
+            $("#end-date").datepicker("setDate", getFormatedDate(1));
+        });
+
+        $('#start-date').datepicker({
+            language: 'zh-CN',
+            format: 'yyyy-mm-dd',
+            autoclose: true,
+            defaultDate: -1,
+            clearBtn: true
+        });
+
+        $('#end-date').datepicker({
+            language: 'zh-CN',
+            format: 'yyyy-mm-dd',
+            autoclose: true,
+            defaultDate: 1,
+            clearBtn: true
+        })
+    </script>
+    <script src="/static/js/get_product_info.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+.table th {
+  text-align: center;
+}
+.table td {
+  text-align: center;
+}
+.query-group {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.big-size {
+  margin-top: 40px;
+  min-height: 80px;
+}
+.no-content{
+  min-height:80px;
+  line-height:80px;
+  text-align: center;
+  overflow:hidden;
+}
+
+/*.navbar {*/
+  /*position: relative;*/
+  /*min-height: 50px;*/
+  /*margin-bottom: 1px;*/
+  /*background-color:#000000;  //此处是我修改的地方*/
+  /*border: 1px solid transparent;*/
+
+/*}*/
