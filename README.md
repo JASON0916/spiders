@@ -12,3 +12,6 @@ spiders
 
 4.HongKongStock spider:
   A Freelancer project, collect information from http://tsci.com.cn , and then store the data in vps' MySQL database.
+
+5.Ebay spider:
+  A Freelancer project, collect product information from ebay and a web made by Flask to show the data and manage the spider
